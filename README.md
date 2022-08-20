@@ -1,4 +1,18 @@
-# 原文件树
+# 使用方法
+
+### 默认路径
+
+复制到[**文件树**](#文件树)所示位置, 直接双击
+
+### 自定义路径
+
+``` shell
+./mdbook_summary.exe path/to/your/src
+```
+
+# 示例
+
+## 文件树
 
 ```
 │  book.toml
@@ -21,7 +35,33 @@
             C#.md  //引起警告
 ```
 
-# 生成的Summary.md
+## 终端输出
+
+```
+Using Path: D:\Repositories\Test\src\
+Start...
+Target File: D:\Repositories\Test\src\SUMMARY.md
+------
+# Summary
+
+- [chapter_1](chapter_1.md)
+- [CSharp]()
+    - [CSharp](CSharp\CSharp.md)
+- [新建 文件夹]()
+    - [新建文本文档](新建 文件夹\新建文本文档.md)
+- [新建文件夹]()
+    - [C#](新建文件夹\C#.md)
+------
+...Done
+------
+Warning: 检测到下列文件(夹)含非法字符, 这会导致mdbook异常, 请修改后重新运行
+------
+新建 文件夹
+C#.md
+------
+```
+
+## 生成的Summary.md
 
 ```markdown
 # Summary
@@ -34,15 +74,3 @@
 - [新建文件夹]()
     - [C#](新建文件夹\C#.md)
 ```
-
-
-
-# 使用方法
-
-### 默认路径
-
-复制到[**原文件树**](#原文件树)所示位置, 直接双击
-
-### 自定义路径
-
-`./mdbook_summary.exe path/to/src`
